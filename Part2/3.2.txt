@@ -1,0 +1,35 @@
+ -------3.2---------
+
+ L = [3, 5, 4] ; L = L.sort()
+ 1) ta sama linia
+ 2) z ' ; '
+ 3) Funkcja sort() nie zwraca niczego
+
+ Rozwiązanie:
+ L = [3, 5, 4]
+ L.sort()
+_________________________
+
+ x, y = 1, 2, 3
+ za dużo wartości (3) tylko dla dwóch zmiennych
+
+ Rozwiązanie:
+ x, y = 1, 2
+_________________________
+
+ X = 1, 2, 3 ; X[1] = 4
+ krotki są niezmienne
+_________________________
+
+
+ X = [1, 2, 3] ; X[3] = 4
+ tablica nie ma elementu trzeciego indeksu
+ ma tylko 0, 1, 2 indeksy
+_________________________
+
+ X = "abc" ; X.append("d")
+ funkcja append() dotyczy listy
+_________________________
+
+ map(pow, range(8))
+funkcja pow() oczekuje 2 argumentów zamiast 1

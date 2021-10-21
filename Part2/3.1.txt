@@ -1,0 +1,28 @@
+ -------3.1--------
+
+ 1)
+ x = 2 ; y = 3 ;
+ if (x > y):
+    result = x;
+ else:
+     result = y;
+
+Tak, ale lepiej bez ' ; '
+_________________________
+
+ 2) for i in "qwerty": if ord(i) < 100: print i
+
+ Nie,
+
+ Rozwiązanie:
+ for i in "qwerty":
+     if ord(i) < 100:
+        print(i)
+_________________________
+
+ 3) for i in "axby": print ord(i) if ord(i) < 100 else i
+ 3) Nie,
+
+ Rozwiązanie:
+ for i in "axby":
+     print(i)

@@ -22,7 +22,7 @@ def rectangle(rows, cols):
     horizontal_line = "+"
     vertical_line = "|"
 
-    for i in range(0, cols):
+    for _ in range(0, cols):
         horizontal_line += "---+"
         vertical_line += "   |"
 

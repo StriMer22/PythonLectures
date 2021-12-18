@@ -13,7 +13,7 @@ class Node:
 def count_leafs(top: Node):
     if top is None:
         return 0
-    if (top.right and top.left) is None:
+    if top.right is None and top.left is None:
         return 1
     if not isinstance(top, Node):
         raise ValueError("'top' has to be Node instance.")

@@ -44,7 +44,7 @@ class SingleList:
 
     def remove_head(self):
         if self.is_empty():
-            raise ValueError("pusta lista")
+            raise ValueError("empty list")
         node = self.head
         if self.head == self.tail:
             self.head = self.tail = None
@@ -56,15 +56,17 @@ class SingleList:
 
     def remove_tail(self):
         if self.is_empty():
-            raise ValueError("pusta lista")
+            raise ValueError("empty list")
         node = self.tail
         if self.head == self.tail:
             self.head = self.tail = None
         else:
-            while self.head.next.next:
-                self.head = self.head.next
-            self.head.next = None
-            self.tail = self.head
+            temp = self.head
+            while temp.next != self.tail:
+                temp = temp.next
+            self.tail = temp
+            self.tail.next = temp.next
+        node.next = None
         self.length -= 1
         return node
 
@@ -76,7 +78,8 @@ class SingleList:
         else:
             self.tail.next = other.head
             self.tail = other.tail
-            self.length = self.length + other.length
+            self.length += other.length
+            other.clear()
 
     def clear(self):
         self.length = 0
@@ -89,11 +92,9 @@ class Test(unittest.TestCase):
         self.alist = SingleList()
         self.alist.insert_head(Node(1))
         self.alist.insert_head(Node(2))
-
         self.blist = SingleList()
         self.blist.insert_head(Node(10))
         self.blist.insert_head(Node(20))
-
         self.clist = SingleList()
 
     def test_remove_tail(self):
@@ -105,9 +106,7 @@ class Test(unittest.TestCase):
         self.alist.merge(self.blist)
         self.assertEqual(self.alist.length, 4)
         self.assertEqual(self.alist.head.data, 2)
-        self.assertEqual(self.alist.tail.data, self.blist.tail.data)
-        self.clist.merge(self.blist)
-        self.assertEqual(self.clist.head.data, self.blist.head.data)
+        self.assertTrue(self.blist.is_empty())
 
     def test_clear(self):
         self.alist.clear()

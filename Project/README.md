@@ -60,6 +60,8 @@ Po ściągnięciu i zainstalowaniu wszystkich zależności można przystąpić d
 
 Jej sygnatura wygląda następująco:
 
+`def fraktal2D(n, r=1.0, s_len=1.0, plot=True)`
+
 Jak widać, tylko parametr n określający liczbę cząstek jest wymagany, a pozostałe argumenty posiadają wartości domyślne i są traktowane jako opcjonalne.
 
 Parametr r określa promień cząstki, s_len to krok wykorzystany w ruchu cząstki (zaleca się by wartość ta był równa promieniowi cząstki). Ostatni parametr plot decyduje o wyświetleniu (gdy przyjmuje wartość True) fraktalu na wykresie.
